@@ -27,6 +27,11 @@ const routes: Routes = [
     ],
   },
   {
+    path: "connexion",
+    loadComponent: () =>
+      import("./core/authentication/authentication.component").then((m) => m.AuthenticationComponent),
+  },
+  {
     path: "settings",
     loadComponent: () =>
       import("./features/settings/settings.component").then(
