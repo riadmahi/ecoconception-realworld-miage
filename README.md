@@ -3,6 +3,7 @@
 
 ### Pratiques mises en place à l'inverse
 * 1	Optimiser le parcours utilisateur
+* 6	Limiter le nombre de requêtes HTTP
 * 8	Favoriser les pages statiques
 * 17	Favoriser les polices standards
 * 18	Préférer les glyphs aux images
