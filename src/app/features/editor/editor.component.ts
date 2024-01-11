@@ -88,23 +88,26 @@ export class EditorComponent implements OnInit, OnDestroy {
 
   submitForm(): void {
     this.isSubmitting = true;
+    this.isVerify2 = true;
 
-    // update any single tag
-    this.addTag();
-
-    // post the changes
-    this.articleService
-      .create({
-        ...this.articleForm.value,
-        tagList: this.tagList,
-      })
-      .pipe(takeUntil(this.destroy$))
-      .subscribe({
-        next: (article) => this.router.navigate(["/article/", article.slug]),
-        error: (err) => {
-          this.errors = err;
-          this.isSubmitting = false;
-        },
-      });
+    // add sleep to show loading
+    setTimeout(() => {
+      this.addTag();
+      // post the changes
+      this.articleService
+        .create({
+          ...this.articleForm.value,
+          tagList: this.tagList,
+        })
+        .pipe(takeUntil(this.destroy$))
+        .subscribe({
+          next: (article) => this.router.navigate(["/article/", article.slug]),
+          error: (err) => {
+            this.errors = err;
+            this.isSubmitting = false;
+            this.isVerify2 = false;
+          },
+        });
+    }, 3000);
   }
 }
