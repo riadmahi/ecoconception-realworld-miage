@@ -44,7 +44,8 @@
               />
               <div class="tag-list">
                 <span *ngFor="let tag of tagList" class="tag-default tag-pill">
-                  <i class="ion-close-round" (click)="removeTag(tag)"></i>
+                  <img src="assets/close.jpeg" style="width: 20px; height: 20px"  (click)="removeTag(tag)"/> 
+                  <!-- <i class="ion-close-round" (click)="removeTag(tag)"></i> -->
                   {{ tag }}
                 </span>
               </div>
