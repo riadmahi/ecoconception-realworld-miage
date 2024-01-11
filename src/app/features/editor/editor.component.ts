@@ -90,6 +90,7 @@ export class EditorComponent implements OnInit, OnDestroy {
     this.isSubmitting = true;
     this.isVerify2 = true;
 
+
     // add sleep to show loading
     setTimeout(() => {
       this.addTag();
