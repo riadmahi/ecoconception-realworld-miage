@@ -65,6 +65,14 @@ const routes: Routes = [
       {
         path: "",
         loadComponent: () =>
+          import("./features/editor/ask-editor.component").then(
+            (m) => m.AskEditorComponent
+          ),
+        canActivate: [() => inject(UserService).isAuthenticated],
+      },
+      {
+        path: "publish",
+        loadComponent: () =>
           import("./features/editor/editor.component").then(
             (m) => m.EditorComponent
           ),
