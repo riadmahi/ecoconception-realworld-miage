@@ -39,6 +39,7 @@ export class EditorComponent implements OnInit, OnDestroy {
   isSubmitting = false;
   destroy$ = new Subject<void>();
   isVerify = false;
+  isVerify2 = false;
 
   constructor(
     private readonly articleService: ArticlesService,
