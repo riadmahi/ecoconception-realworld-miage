@@ -23,4 +23,7 @@ export class ArticlePreviewComponent {
       this.article.favoritesCount--;
     }
   }
+
+    protected readonly alert = alert;
+  protected readonly RouterLink = RouterLink;
 }
