@@ -1,1 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
+@font-face {
+  font-family: 'Egyptian';
+  src: url('./assets/egyptian.otf'); /* Assurez-vous de spécifier le bon chemin vers votre fichier de police */
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  font-family: "Egyptian";
+}
