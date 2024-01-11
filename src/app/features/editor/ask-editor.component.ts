@@ -1,4 +1,4 @@
-import { NgForOf } from "@angular/common";
+import {NgForOf, NgIf} from "@angular/common";
 import { Component, OnDestroy, OnInit } from "@angular/core";
 import {
   FormControl,
@@ -23,21 +23,21 @@ interface ArticleForm {
 @Component({
   selector: "app-askeditor-page",
   templateUrl: "./ask-editor.component.html",
-  imports: [ListErrorsComponent, ReactiveFormsModule, NgForOf],
+  imports: [ListErrorsComponent, ReactiveFormsModule, NgForOf, NgIf],
   standalone: true,
 })
 export class AskEditorComponent implements OnInit, OnDestroy {
-  
+  isVerify = false;
   constructor(
-   
+
   ) {}
 
   ngOnInit() {
-    
+
   }
 
   ngOnDestroy() {
-   
+
   }
 
   publishArticle() {

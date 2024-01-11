@@ -1,4 +1,4 @@
-import { NgForOf } from "@angular/common";
+import {NgForOf, NgIf} from "@angular/common";
 import { Component, OnDestroy, OnInit } from "@angular/core";
 import {
   FormControl,
@@ -23,7 +23,7 @@ interface ArticleForm {
 @Component({
   selector: "app-editor-page",
   templateUrl: "./editor.component.html",
-  imports: [ListErrorsComponent, ReactiveFormsModule, NgForOf],
+    imports: [ListErrorsComponent, ReactiveFormsModule, NgForOf, NgIf],
   standalone: true,
 })
 export class EditorComponent implements OnInit, OnDestroy {
@@ -38,6 +38,7 @@ export class EditorComponent implements OnInit, OnDestroy {
   errors: Errors | null = null;
   isSubmitting = false;
   destroy$ = new Subject<void>();
+  isVerify = false;
 
   constructor(
     private readonly articleService: ArticlesService,

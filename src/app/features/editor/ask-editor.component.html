@@ -1,12 +1,22 @@
 <div class="editor-page">
+  <div class="container page" style="display:  flex; justify-content: center;">
+    <button
+      class="btn btn-lg pull-xs-right btn-primary"
+      type="button"
+      *ngIf="!isVerify"
+      (click)="isVerify = !isVerify"
+    >
+      Vous êtes sur de publier l'article ?
+    </button>
+  </div>
     <div class="container page" style="display:  flex; justify-content: center;">
             <button
             class="btn btn-lg pull-xs-right btn-primary"
             type="button"
+            *ngIf="isVerify"
             (click)="publishArticle()"
         >
             Je veux publier un article
-        </button> 
+        </button>
     </div>
 </div>
-  
