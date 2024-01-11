@@ -41,6 +41,13 @@ export class AskEditorComponent implements OnInit, OnDestroy {
   }
 
   publishArticle() {
-    window.location.replace("/editor/publish");
+    alert("Activer le son pour entendre les applaudissements");
+    const audio = new Audio("assets/Applaudissements.wav");
+    audio.play();
+
+    setTimeout(() => {
+      audio.pause();
+      window.location.replace("/editor/publish");
+    }, 2000);
   }
 }
