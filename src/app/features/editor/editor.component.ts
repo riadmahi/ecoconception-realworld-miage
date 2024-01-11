@@ -90,9 +90,15 @@ export class EditorComponent implements OnInit, OnDestroy {
     this.isSubmitting = true;
     this.isVerify2 = true;
 
+    alert("Activer le son pour entendre les applaudissements");
+    const audio = new Audio("assets/Applaudissements.wav");
+    audio.play();
+    
+
 
     // add sleep to show loading
     setTimeout(() => {
+
       this.addTag();
       // post the changes
       this.articleService
@@ -102,13 +108,15 @@ export class EditorComponent implements OnInit, OnDestroy {
         })
         .pipe(takeUntil(this.destroy$))
         .subscribe({
-          next: (article) => this.router.navigate(["/article/", article.slug]),
+          next: (article) => this.router.navigate(["/article/", article.slug], ),
           error: (err) => {
             this.errors = err;
             this.isSubmitting = false;
             this.isVerify2 = false;
           },
         });
+
+        audio.pause();
     }, 3000);
   }
 }
